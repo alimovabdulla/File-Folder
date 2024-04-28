@@ -218,7 +218,34 @@ namespace Ebana.Helper
 
         }
 
+        public static void CreateFolder()
+        {
 
+
+            Console.WriteLine("               Folderin Yolun Ve Adin Qeyd Edin:             ");
+            Console.WriteLine("                                                             ");
+            string cr = Console.ReadLine();
+            string path = $@"{cr}";
+            Console.WriteLine("                    Folderin Adin Qeyd Edin                  ");
+            string ad = Console.ReadLine();
+            path += ad;
+             
+            Directory.CreateDirectory(path);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("                                                       ");
+            Console.WriteLine("                                                       ");
+            Console.WriteLine($"               ({ad})- Folderi Ugurla Yaradildi              ");
+            Console.WriteLine("                                                       ");
+            Console.WriteLine("                                                       ");
+            Console.ForegroundColor = ConsoleColor.White;
+
+
+
+
+
+
+
+        }
 
 
 
