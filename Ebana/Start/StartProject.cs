@@ -11,14 +11,14 @@ namespace Ebana.Start
 {
     internal class StartProject
     {
-        public   static void PStart()
+        public static void PStart()
         {
 
 
             try
             {
 
-
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("-----------------------------------------------------------------");
                 Console.WriteLine("|                  File/Folder Operations                       |");
                 Console.WriteLine("-----------------------------------------------------------------");
@@ -32,6 +32,7 @@ namespace Ebana.Start
                 Console.WriteLine("*                                                               *");
                 Console.WriteLine("*                                                               *");
                 int _secim = Convert.ToInt32(Console.ReadLine());
+                Console.ForegroundColor = ConsoleColor.White;
 
                 if (_secim<=2)
                 {

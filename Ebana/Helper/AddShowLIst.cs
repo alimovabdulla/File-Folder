@@ -1,7 +1,9 @@
 ﻿using Ebana.MyException;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
  
 namespace Ebana.Helper
@@ -164,9 +166,11 @@ namespace Ebana.Helper
              using (StreamWriter wr = new StreamWriter(wrt))
              {
                 Console.WriteLine("      Elave etmek istediyiniz melumati qeyd edin:");
-                string text = Console.ReadLine();
+                Console.WriteLine("                                                             ");
+                    string text = Console.ReadLine();
                 wr.WriteLine(text);
-                Console.WriteLine($" Melumat Ugurla ( {write} ) faylina Qeyd Edildi");
+                    Console.WriteLine("                                                             ");
+                    Console.WriteLine($" Melumat Ugurla ( {write} ) faylina Qeyd Edildi");
 
              }
 
@@ -188,17 +192,26 @@ namespace Ebana.Helper
 
         public static void FileAdd()
         {
+            
             try
             {
-                Console.WriteLine("               Faylin Yolun Ve Adin Qeyd Edin:               ");
-                Console.WriteLine("                                                             ");
+                Console.WriteLine("    Faylin Yolun sonuna (left slash) Qoyaraq  Qeyd Edin:      ");
+                Console.WriteLine("                                                              ");
                 string yol = Console.ReadLine();
                 string fyol = $@"{yol}";
+                Console.WriteLine("                                                             ");
+                Console.WriteLine("                    Faylin Adin  Qeyd Edin:                  ");
+                Console.WriteLine("                                                             ");
+                string ad = Console.ReadLine();
+
+                fyol += ad;
+                fyol += ".txt";
+
                 File.Create(fyol);
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("                                                       ");
                 Console.WriteLine("                                                       ");
-                Console.WriteLine($"        ({yol})- Fayli Ugurla Yaradildi               ");
+                Console.WriteLine($"              ({ad})- Fayli Ugurla Yaradildi          ");
                 Console.WriteLine("                                                       ");
                 Console.WriteLine("                                                       ");
                 Console.ForegroundColor = ConsoleColor.White;
@@ -221,24 +234,34 @@ namespace Ebana.Helper
         public static void CreateFolder()
         {
 
+            try
+            {
+                Console.WriteLine("                  Folderin Yolun  Qeyd Edin:                 ");
+                Console.WriteLine("                                                             ");
+                string cr = Console.ReadLine();
+                string path = $@"{cr}";
+                Console.WriteLine("                   Folderin Adin Qeyd Edin:                 ");
+                string ad = Console.ReadLine();
+                path += ad;
 
-            Console.WriteLine("               Folderin Yolun Ve Adin Qeyd Edin:             ");
-            Console.WriteLine("                                                             ");
-            string cr = Console.ReadLine();
-            string path = $@"{cr}";
-            Console.WriteLine("                    Folderin Adin Qeyd Edin                  ");
-            string ad = Console.ReadLine();
-            path += ad;
-             
-            Directory.CreateDirectory(path);
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("                                                       ");
-            Console.WriteLine("                                                       ");
-            Console.WriteLine($"               ({ad})- Folderi Ugurla Yaradildi              ");
-            Console.WriteLine("                                                       ");
-            Console.WriteLine("                                                       ");
-            Console.ForegroundColor = ConsoleColor.White;
+                Directory.CreateDirectory(path);
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("                                                       ");
+                Console.WriteLine("                                                       ");
+                Console.WriteLine($"              ({ad})- Folderi Ugurla Yaradildi!       ");
+                Console.WriteLine("                                                       ");
+                Console.WriteLine("                                                       ");
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+            catch  
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(new Error());
+                Console.ForegroundColor = ConsoleColor.White;
+                FileOrFolder.FileOp();
 
+            }
+            
 
 
 

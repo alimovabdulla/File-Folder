@@ -32,15 +32,21 @@ namespace Ebana.Helper
            {
 
 
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("*---------------------------------------------------------------*");
+            Console.WriteLine("*                                                               *");
             Console.WriteLine("*                   Folderleri Gormek Ucun 1                    *");
             Console.WriteLine("*                                                               *");
             Console.WriteLine("*                Yeni Folder Elave Etmek Ucun 2                 *");
             Console.WriteLine("*                                                               *");
             Console.WriteLine("*                    Menuya Qayidmaq Ucun 3                     *");
             Console.WriteLine("*                                                               *");
+            Console.WriteLine("*                  Emeliyyati Bitirmek ucun 0                   *");
+            Console.WriteLine("*                                                               *");
             Console.WriteLine("*                       Duymesini Secin                         *");
             Console.WriteLine("*                                                               *");
             int secim = Convert.ToInt32(Console.ReadLine());
+            Console.ForegroundColor = ConsoleColor.White;
              if (secim<=3)
              {
 
@@ -122,9 +128,9 @@ namespace Ebana.Helper
                 while (_dongu)
                 {
 
-
-
-
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine("*---------------------------------------------------------------*");
+                    Console.WriteLine("*                                                               *");
                     Console.WriteLine("*                   Fayllari Gormek Ucun 1                      *");
                     Console.WriteLine("*                                                               *");
                     Console.WriteLine("*                Yeni Fayl Elave Etmek Ucun 2                   *");
@@ -139,6 +145,7 @@ namespace Ebana.Helper
                     Console.WriteLine("*                                                               *");
                     Console.WriteLine("*                       Duymesini Secin                         *");
                     int secim = Convert.ToInt32(Console.ReadLine());
+                    Console.ForegroundColor = ConsoleColor.White;
                     if (secim<=5)
                     {
 
