@@ -1,4 +1,5 @@
-﻿using Ebana.Helper;
+﻿using Ebana.APIoperation;
+using Ebana.Helper;
 using Ebana.MyException;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,11 @@ using System.Threading.Tasks;
 namespace Ebana.Start
 {
     internal class StartProject
-    {
+    {    
         public static void PStart()
         {
-
+            Console.WindowHeight = 30;
+            Console.WindowWidth = 66;
 
             try
             {
@@ -28,13 +30,15 @@ namespace Ebana.Start
                 Console.WriteLine("*                                                               *");
                 Console.WriteLine("*                  File Emeliyyati Ucun 2                       *");
                 Console.WriteLine("*                                                               *");
-                Console.WriteLine("*                     Duymesini Secin                           *");
+                Console.WriteLine("*                   API Emeliyyati ucun 3                       *");
                 Console.WriteLine("*                                                               *");
+                Console.WriteLine("*                     Duymesini Secin!                          *");
                 Console.WriteLine("*                                                               *");
+
                 int _secim = Convert.ToInt32(Console.ReadLine());
                 Console.ForegroundColor = ConsoleColor.White;
 
-                if (_secim<=2)
+                if (_secim<=3)
                 {
 
                     switch (_secim)
@@ -47,7 +51,12 @@ namespace Ebana.Start
                             FileOrFolder.FileOp();
                             break;
 
+                        case 3:
+                             
+                            Task task = OpAPI.FetchDataFromUrl();
+                            task.Wait();
 
+                            break;  
 
 
 

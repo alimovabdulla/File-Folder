@@ -17,7 +17,7 @@ namespace Ebana.Start
             Console.WriteLine("|                Emeliyyat Ugurla Sona Catdi                    |");
             Console.WriteLine("-----------------------------------------------------------------");
             Console.ForegroundColor = ConsoleColor.White;
-
+            
 
         }
     }
